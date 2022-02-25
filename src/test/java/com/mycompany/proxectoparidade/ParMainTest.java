@@ -1,8 +1,11 @@
+package com.mycompany.proxectoparidade;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
  */
 
+import com.mycompany.proxectoparidade.ParMain;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Disabled;
@@ -36,9 +39,9 @@ public class ParMainTest {
     public void testComprobarParidadeCero() {
         System.out.println("comprobarParidade do cero");
         int numeroProba = 0;
-        String expResult = "O número é par";
-        String result = ParMain.comprobarParidade(numeroProba);
-        assertEquals(expResult, result);
+        String resultadoEsperado = "O número é par";
+        String resultado = ParMain.comprobarParidade(numeroProba);
+        assertEquals(resultadoEsperado, resultado);
     }
    
     @Test
@@ -76,5 +79,33 @@ public class ParMainTest {
         String result = ParMain.comprobarParidade(numeroProba);
         assertEquals(expResult, result);
     }
-        
+
+    
+
+    /**
+     * Test of verificaPar method, of class ParMain.
+     */
+    @Test
+    public void testVerificaPar0() {
+        System.out.println("verificaParCero");
+        int numeroProba = 0;
+        assertTrue(ParMain.verificaPar(numeroProba));
+
+    }
+  @Test
+    public void testVerificaPar10() {
+        System.out.println("verificaParde10");
+        int numeroProba = 10;
+        assertTrue(ParMain.verificaPar(numeroProba));
+
+    }
+    @Test
+    public void testVerificaImpar11() {
+        System.out.println("verificaParde11");
+        int numeroProba = 11;
+        assertFalse(ParMain.verificaPar(numeroProba));
+    }
+    
+    
+    
 }
