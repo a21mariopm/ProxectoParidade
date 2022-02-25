@@ -9,12 +9,15 @@ import java.util.Scanner;
  */
 
 /**
- *
+ * Comproba a paridade dun numero enteiro
  * @author a21mariopm
  */
 public class ParMain {
 
+    private static final String O_NUMERO_E_IMPAR = "O número é impar";
+    private static final String O_NUMERO_E_PAR = "O número é par";
     /**
+     * Le un numero da entrada estandar e comproba a sua paridade
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -23,6 +26,11 @@ public class ParMain {
         System.out.println(comprobarParidade(numeroProba));
     }
 
+    /**
+     * Indica se numero proba é par ou impar
+     * @param numeroPar numero enteiro a comprobar
+     * @return cadea indicando a paridade
+     */
     static String comprobarParidade(int numeroProba) {
         String resultado;
         if (verificaPar(numeroProba)){
@@ -32,13 +40,19 @@ public class ParMain {
         }
         return resultado;
     }
-
+    /**
+     * Verifica se numeroProba é par
+     * @param numeroPar numero enteiro a comprobar
+     * @return booleano con valor true se o numero é par
+     */    
     static boolean verificaPar(int numeroProba) {
         return numeroProba%2==0;
     }
-    private static final String O_NUMERO_E_IMPAR = "O número é impar";
-    private static final String O_NUMERO_E_PAR = "O número é par";
-
+    /**
+     * Le número da entrada estandar
+     * @param in representa a entrada estandar
+     * @return enteiro inserido por o usuario
+     */
     private static int lerNumero(Scanner in) {
         System.out.println("Introduce un número");
         int numeroProba=in.nextInt();
